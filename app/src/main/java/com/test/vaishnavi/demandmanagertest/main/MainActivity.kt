@@ -107,8 +107,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun deleteList(): Boolean {
         TaskDatabase.getInstance(this).taskDao().deleteByTitle(title_delete)
-        //adapter.notifyDataSetChanged()
-        Toast.makeText(this, title_delete,Toast.LENGTH_SHORT).show()
         return true
     }
 
@@ -118,10 +116,5 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
         return true
     }
-
-    interface RecyclerViewClickListener {
-        fun recyclerViewListClicked(v: View, position: Int)
-    }
-
 
 }
