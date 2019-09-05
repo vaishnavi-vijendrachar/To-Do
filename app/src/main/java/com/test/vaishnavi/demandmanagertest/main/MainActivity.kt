@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         //set up recycler view
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(applicationContext, LinearLayout.VERTICAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(applicationContext, LinearLayout.VERTICAL, false) as RecyclerView.LayoutManager?
 
 
         //Initialise View Model in the Layout
@@ -99,7 +99,6 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
             R.id.action_edit -> editList()
             R.id.action_delete ->deleteList()
             else -> super.onOptionsItemSelected(item)
