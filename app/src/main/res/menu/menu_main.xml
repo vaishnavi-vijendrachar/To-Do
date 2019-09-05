@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.test.vaishnavi.demandmanagertest.MainActivity">
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item
+            android:id="@+id/action_edit"
+            android:enabled="true"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Edit"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/action_delete"
+            android:enabled="true"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="Delete"
+            app:showAsAction="never" />
+
+</menu>
