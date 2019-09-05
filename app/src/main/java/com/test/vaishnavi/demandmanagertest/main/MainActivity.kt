@@ -1,4 +1,4 @@
-package com.test.vaishnavi.demandmanagertest
+package com.test.vaishnavi.demandmanagertest.main
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
@@ -14,11 +14,12 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.test.vaishnavi.demandmanagertest.R
+import com.test.vaishnavi.demandmanagertest.add.AddActivity
 import com.test.vaishnavi.testdm.data.Task
 import com.test.vaishnavi.testdm.data.TaskDatabase
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.add_layout.view.*
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            startActivity(Intent(this,AddActivity::class.java))
+            startActivity(Intent(this, AddActivity::class.java))
         }
 
         list = ArrayList()
@@ -63,16 +64,25 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        recyclerView.addOnItemTouchListener(RecyclerTouchListener(applicationContext,recyclerView,object : RecyclerTouchListener.ClickListener{
-            override fun onClick(view: View, position: Int) {
-                title_delete = view.title.text.toString()
-                Log.d("vish","delete string"+ title_delete)
-            }
+        recyclerView.addOnItemTouchListener(
+            RecyclerTouchListener(
+                applicationContext,
+                recyclerView,
+                object : RecyclerTouchListener.ClickListener {
+                    override fun onClick(view: View, position: Int) {
+                        title_delete =
+                                view.title.text.toString()
+                        Log.d(
+                            "vish",
+                            "delete string" + title_delete
+                        )
+                    }
 
-            override fun onLongClick(view: View, position: Int) {
-            }
+                    override fun onLongClick(view: View, position: Int) {
+                    }
 
-        }))
+                })
+        )
 
     }
 
@@ -99,12 +109,12 @@ class MainActivity : AppCompatActivity() {
     private fun deleteList(): Boolean {
         TaskDatabase.getInstance(this).taskDao().deleteByTitle(title_delete)
         //adapter.notifyDataSetChanged()
-        Toast.makeText(this,title_delete,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, title_delete,Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun editList(): Boolean {
-        var intent :Intent = Intent(this,AddActivity::class.java)
+        var intent :Intent = Intent(this, AddActivity::class.java)
         intent.putExtra("text_edit", title_delete);
         startActivity(intent)
         return true

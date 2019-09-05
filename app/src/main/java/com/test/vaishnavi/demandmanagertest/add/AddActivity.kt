@@ -1,9 +1,10 @@
-package com.test.vaishnavi.demandmanagertest
+package com.test.vaishnavi.demandmanagertest.add
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.util.Log
+import com.test.vaishnavi.demandmanagertest.R
 import com.test.vaishnavi.testdm.data.Task
 import com.test.vaishnavi.testdm.data.TaskDatabase
 import kotlinx.android.synthetic.main.add_layout.*

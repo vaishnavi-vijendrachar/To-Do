@@ -1,13 +1,10 @@
-package com.test.vaishnavi.demandmanagertest
+package com.test.vaishnavi.demandmanagertest.main
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.MotionEvent
 import android.view.GestureDetector
 import android.view.View
-import android.R.attr.onClick
-import android.text.method.Touch.onTouchEvent
-import java.io.File
 
 
 class RecyclerTouchListener() : RecyclerView.OnItemTouchListener {
@@ -15,7 +12,7 @@ class RecyclerTouchListener() : RecyclerView.OnItemTouchListener {
     private var gestureDetector: GestureDetector? = null
     private var clickListener: ClickListener? = null
 
-    constructor(context : Context, recyclerView: RecyclerView,clickListener :ClickListener) : this() {
+    constructor(context : Context, recyclerView: RecyclerView,clickListener : ClickListener) : this() {
         this.clickListener = clickListener
         gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
             override fun onSingleTapUp(e: MotionEvent): Boolean {

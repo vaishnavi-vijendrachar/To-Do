@@ -1,4 +1,4 @@
-package com.test.vaishnavi.demandmanagertest
+package com.test.vaishnavi.demandmanagertest.main
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
